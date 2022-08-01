@@ -1,0 +1,41 @@
+\section{Appendix: Sample source code}\label{app:sample-source-code}
+
+This demonstrates how to include source code in your apendix.  There are several ways of doing this, which one you use depends on the situation.  You can include verbatim text inline, e.g.  This report is typeset using  \verb|LaTeX|.  This won't work for anything beyond a few words, i.e. no line-breaks, \verb| but handles file_names| with underscores very well.
+
+Another way, which works for multiple lines is to use typewriter text \verb|\texttt| as follows:
+\texttt{
+multiple lines \\
+but no special characters }
+
+If you want to use syntax highlighting, then you need something more sophisticated: the \verb|listings| package, explained here \url{https://www.overleaf.com/learn/latex/Code_listing#Using_listings_to_highlight_code}.  You can change the size of the code font in the style definition.
+
+% https://tex.stackexchange.com/questions/83882/how-to-highlight-python-syntax-in-latex-listings-lstinputlistings-command
+
+\begin{lstlisting}[language=python]
+    import numpy as np
+        
+    def incmatrix(genl1,genl2):
+        m = len(genl1)
+        n = len(genl2)
+        M = None #to become the incidence matrix
+        VT = np.zeros((n*m,1), int)  #dummy variable
+        
+        #compute the bitwise xor matrix
+        M1 = bitxormatrix(genl1)
+        M2 = np.triu(bitxormatrix(genl2),1) 
+    
+        for i in range(m-1):
+            for j in range(i+1, m):
+                [r,c] = np.where(M2 == M1[i,j])
+                for k in range(len(r)):
+                    VT[(i)*n + r[k]] = 1;
+                    
+                    if M is None:
+                        M = np.copy(VT)
+                    else:
+                        M = np.concatenate((M, VT), 1)
+                    
+                    VT = np.zeros((n*m,1), int)
+        
+        return M
+    \end{lstlisting}

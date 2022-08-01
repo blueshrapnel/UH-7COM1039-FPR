@@ -1,0 +1,262 @@
+\documentclass[a4paper, notitlepage, 11pt]{article}
+
+\input{includes-math}
+\input{includes-preamble}
+
+% source code listing
+\usepackage{listings}
+% Custom colors
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+% Python style for highlighting
+% https://www.overleaf.com/learn/latex/Code_listing#Using_listings_to_highlight_code
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\normalsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=3pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+% for tables
+\usepackage{makecell}
+\usepackage{booktabs}
+\renewcommand\theadfont{\bfseries}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+% to create the title box
+\usepackage{tcolorbox}
+\tcbset{colback=white, colframe=black, left=2mm, right=2mm, top=0mm
+}
+
+% for monospace text e.g. source code
+\usepackage{verbatim}
+
+
+% for table of contents
+% reduce line spacing between rows of the table of contents
+\usepackage{tocloft}
+\setlength\cftparskip{2pt}
+\setlength\cftbeforesecskip{2pt}
+\setlength\cftaftertoctitleskip{2em}
+
+%%% Student and Project information  
+\newcommand{\projecttitle}{An Investigation into the themes of `The Importance of being Earnest'}                                                         
+\newcommand{\studentname}{Joe Bloggs}
+\newcommand{\studentnumber}{SRN 12345678}
+\newcommand{\supervisorname}{Joe Madge}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%%% Title section 
+\newcommand{\doctype}{Final Project Report}
+\newcommand{\coursecode}{7COM1039}
+\newcommand{\coursedescr}{MSc Project : Adv Computing}
+\newcommand{\reportdate}{15 September 2022}
+
+
+\begin{document}
+\thispagestyle{empty} % don't create default title page
+% 7COM1039 title page
+\begin{center}
+    \vspace{2cm}
+    \includegraphics[scale=0.2]{herts-logo-black.png} \\[5cm]
+    
+    \HRule \\[0.4cm]
+    \huge{ \bfseries \projecttitle \\[0.15cm] }
+    \HRule \\[1.5cm]
+    
+    \textsf{\LARGE{UNIVERSITY OF HERTFORDSHIRE\\
+    School of Physics, Engineering and Computer Science} \\[2cm]}
+    \LARGE{\studentname \enspace : \enspace \studentnumber}\\
+    \large{\reportdate } \\[3cm]
+    
+\end{center}
+
+\large{\textbf{Course: }\coursedescr\\
+        \coursecode \enspace : \enspace \doctype \\
+    \textbf{Student Name:} \studentname \\
+    \textbf{Student Number:} \studentnumber \\
+    \textbf{Supervised by (if known):} \supervisorname 
+}
+
+
+
+%-----------------------------------------------------------
+\clearpage
+\setcounter{page}{1}
+% table of contents
+% only include sections and sub-sections depth 2, just sections depth 1
+\setcounter{tocdepth}{2}
+
+\section*{Abstract}
+The abstract should be a statement up to half a page in length describing the subject matter of 
+the  project  report  and  the  main  findings  and  conclusions  presented  in  the  report.  A  reader should be able to decide what the report is about by reading this alone.  
+
+\section*{Acknowledgements}
+Delete if you don't have any acknowledgements to make.
+
+\vspace{3em}
+
+\tableofcontents
+
+\section{Introduction to the project}
+
+This chapter should introduce the project. Say what the project was about, such as what are the research  questions  you  were  attempting  to  address,  give  some  brief  background  information (sufficient to ‘set the scene’) and list the objectives  you were trying  to achieve by doing  the project.  These  should  be  based  on  what  you  said  in  your  project  plan,  but  they  may  have changed  since  the  plan  was  submitted;  any  changes  should  be  explained  later  in  the  report, probably in the overall evaluation of the work.  
+
+This chapter should also introduce the report. Give a very brief statement of how your report is  structured,  including  what  is  in  each  chapter  (and  the  most  important  appendices),  just  to help the reader gain an idea of how you have presented your work.  
+
+You should be aware from the outset that FPR and your explanation of your work is the primary evidence  used  in  the  assessment  -  and  it  is  this  assessment  of  your  abilities  to  conduct  and deliver a project that is key. You should assume that your audience has the level of knowledge of a good Masters' student who has taken the same modules as you. Keep this in mind when writing about background technical information and do not present large amounts of material that such a reader would already know, or that could be read in a standard textbook. Reference the textbook in your bibliography and keep the information you present specific to the project work that you have done. Any software product, model, or artefact that you may have produced during your project is not the focus of the assessment. The project module is about assessing your abilities as a student in your discipline area.  
+
+\subsection{Report Presentation}
+The report should be prepared as follows:  
+\begin{itemize}
+\item Approximately 10,000 words in length.
+\item The bibliography and appendices are not included in the word length.  
+\item Do not use the cover sheet (So NO assignment briefing sheet).  
+\item The same font should be used throughout. We would prefer you to use 12-point Times, 
+though  any  reasonable  alternative  (such  as  Arial)  will  be  accepted,  (except  for 
+mathematical  formulae,  where  you  may  use  whichever  font  is  most  appropriate,  and 
+program  code  examples,  where  you  should  use  a  \texttt{non-proportional  font  such  as 
+Courier)}.  For ease of on-screen reading this template uses 11pt, which is acceptable for this submission.
+\item The handbook states: ``Lines should be single-spaced, with between 1/2 a line and a whole line of extra space after each paragraph. '' However, for ease of on-screen reading this template uses 1.5 spacing, which is acceptable to submit.
+\item Margins: at least 20 mm left and right; 25 mm top and bottom.  
+\item Pages should be numbered in one continuous sequence. 
+\end{itemize}
+
+\section{Collection of main chapters / sections}
+
+Contained below are excerpts from the MSc Handbook for illustration, please also consult the handbook to ensure that you see the content in its entirety.  The chapter / section heading included below are also for illustration so create your own report structre and use section headings appropriate for your research project.
+
+How to present these will depend largely on the subject of the project, but here are a few points of advice: 
+
+(a) You  may  assume  that  your  readership  has  the  level  of  knowledge  of  a  good  Masters’ student  who  has  taken  the  same  modules  as  you.  Bear  this  in  mind  when  writing  about background  technical  information  and  do  not  present  large  amounts  of  material  that  such  a reader would already know or that could be read in a standard textbook. Simply reference the textbook in your bibliography and keep the information you present specific to your own work. Explain how any background material you present has been used in your project.  
+
+(b) The main  chapters of your report are where you describe your achievements. Instead of just listing the tasks that you carried out diary-style, in the order you did them, it is better to organize the chapters/sections around topics.  
+
+(c) In  these  chapters/sections,  you  should  tell  the  reader  what  you  have  done,  why  you  did  it,  what results  you  obtained,  what  you  think  you  have  achieved  (including  the  problems  you  have overcome), how you calculated the commercial risk for your project and how you managed it, and how you went about evaluating your work (criteria applied, tests performed, and so on). Be sure to present the results of your project work properly.  
+
+(d) It is important to present in the written report information about your work that will not be conveyed at the demonstration. As an example, depending on the nature of your project and the way you approached your work, this might include:  
+\subsection{Method}
+Discussion of methods that were considered and the reasons for choosing one method 
+over another;  
+\subsection{Software tools}
+ Use  of  software  tools  (what  inputs  you  supplied,  how  you  configured  them,  what 
+outputs were produced);  
+
+\subsection{Results}
+Presentation  and  discussion  of  results,  for  instance  of  a  program  which 
+was progressively refined or extended; 
+
+
+\section{Discussion and evaluation}
+
+The extent to which you demonstrate the ability to reflect upon your work is very important. 
+\subsection{Findings}
+In this chapter, you should summarise your main findings/results and evaluate what you have 
+achieved and how you went about it. You may find it more convenient to include an evaluation 
+of your work in the chapters where it is presented and summarise that evaluation here. 
+
+\subsection{Self-evaluation}
+What is 
+crucial is to have a critical self-evaluation of the extent to which you have achieved the things 
+you set out to do. Assess the extent to which you met your objectives. You will not be penalised 
+for acknowledging that you failed to achieve everything you set out to do, and especially not 
+the more advanced things, but you certainly would be criticised if you gave the impression of 
+not having noticed that you had failed to meet an objective.  
+
+\subsection{Project management}
+You  should  have  a  short  section  on  management  of  the  project  (usually  one  to  two  pages), 
+including how you planned  to allocate time at the start of the year and how it  worked out  in 
+practice.  Additionally,  you  should  demonstrate  you  have  considered  the  commercial  and 
+economic context of your project.  
+
+\section{Other details from MSc Project Handbook}
+
+\subsection{Bibliography}
+
+After the final chapter, and before any appendices, list any sources (books, journals, web pages 
+etc.) that you cite in your report. You should also list any sources that you have used, even if 
+not cited directly. Use the Harvard system for your in-text citations, and for your references, 
+producing  one  list,  ordered  by  author  surname  (whether  the  material  is  drawn  from  books, 
+journals, forums or blogs, or is a piece of software). 
+\begin{itemize}
+    \item A guide to the Harvard referencing system 
+is provided at \url{http://www.studynet.herts.ac.uk/ptl/common/LIS.nsf/lis/busharvard}.
+    \item This template is setup to use a Harvard style referencing system, \url{https://www.overleaf.com/learn/latex/Questions/Which_BibTeX_Styles_are_Available_on_Overleaf%3F}.
+    \item The University provides an online "Library SkillUP" tutorial on citing sources and 
+referencing that you should work through. It is available at 
+\url{http://www.studynet.herts.ac.uk/ptl/common/LIS.nsf/lis/citing_menu }
+\end{itemize}
+
+Use can reference in latex as shown in this dummy text: Proident pariatur sunt ut fugiat exercitation irure velit nostrud dolore adipisicing dolore ipsum fugiat. Elit in proident minim in velit ut nulla Lorem fugiat Lorem incididunt exercitation. Quis veniam irure ea tempor voluptate pariatur excepteur sunt aliqua fugiat veniam ipsum \emph{value function}  \citep{Sutton2018}.
+
+
+\subsection{Appendices}
+
+The appendices to your report provide supporting evidence of the quality and quantity of the 
+work you have done. Your appendices should contain any specifications, design documents, 
+survey  forms  and  results,  screen  shots,  and  other  documentation  produced  as  part  of  your 
+project. Without this supporting evidence, it is possible that the markers will take the view that 
+you have not done everything you claim to have done.  
+
+However, the  appendices are only  there to back up  the claims made in your report. Markers 
+can only be expected to look at those parts of the appendices you draw their attention to in the 
+main body of the report. They are not obliged to read the appendices in detail, though they may 
+do so. If you think it is important to draw the markers' attention to a document, or a part of a 
+document,  tell them where  to find (don't  just say "the code for  this is in  appendix 3", give a 
+page number, and/or other information that makes it clear how to find it; better still, include 
+the relevant fragment of the code in the body of your report).  i.e. Do not dump screenshots or figures in an appendix, add explanatory text in the appendix, detail what it is by using captions for figures and tables.  Refer to it in the main content as follows: Appendix \ref{app:dummy-text} contains an example of dummy text based on fake latin words.  This also creates a hyperlink to the appendix in the pdf file.
+
+
+Do not include copies of any web pages that you have referred to, unless it is necessary for the 
+reader to see them to make your point: just put the citation details in your bibliography.  
+
+Samples of the work that is presented in the appendices may (and probably should) be included 
+in the body of your report to illuminate a point or for discussion purposes. 
+
+Any program code written by you must be presented in the appendices, how to do this with this template is included in Appendix \ref{app:sample-source-code}. But do not include code that is machine generated, or that comes from a different author, unless it is necessary for the reader to understand the work you have done. If you do include code that you did not write yourself, it is your responsibility to make clear which parts of the program are your own and which  parts  are  not.  If  you  present  automatically  generated  code,  or  the  code  of  another programmer, as if it were your own, you may be accused of plagiarism. 
+
+
+
+
+
+
+\bibliographystyle{agsm}  % A Harvard style
+\bibliography{refs}
+
+\clearpage
+\appendix 
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+\input{appendices/dummy-text}
+
+\clearpage
+\input{appendices/sample-source-code}
+
+\clearpage
+\input{appendices/sample-figure}
+
+\end{document}
