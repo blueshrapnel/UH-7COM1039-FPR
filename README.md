@@ -3,7 +3,7 @@
 The main LaTeX file is `report.tex`.  Included in the template are examples of how to reference citations in the main text, how to label and reference appendices, an example of including a figure and source-code.
 
    * clone via Overleaf https://www.overleaf.com/read/hqbdkyhkzvnv
-   * clone via github https://github.com/blueshrapnel/UH-7COM1039-IPR 
+   * clone via github https://github.com/blueshrapnel/UH-7COM1039-FPR 
 
 Resources for Bibtex References:
 
