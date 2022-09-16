@@ -74,8 +74,10 @@
 %%% Title section 
 \newcommand{\doctype}{Final Project Report}
 \newcommand{\coursecode}{7COM1039}
-\newcommand{\coursedescr}{MSc Project : Adv Computing}
+\newcommand{\coursedescr}{MSc Project}
+\newcommand{\moduletitle}{Advanced Computer Science}
 \newcommand{\reportdate}{15 September 2022}
+
 
 
 \begin{document}
@@ -96,15 +98,12 @@
     
 \end{center}
 
-\large{\textbf{Course: }\coursedescr\\
+\large{\textbf{Course: }MSc Project for \moduletitle\\
         \coursecode \enspace : \enspace \doctype \\
     \textbf{Student Name:} \studentname \\
     \textbf{Student Number:} \studentnumber \\
     \textbf{Supervised by (if known):} \supervisorname 
 }
-
-
-
 %-----------------------------------------------------------
 \clearpage
 \setcounter{page}{1}
@@ -118,6 +117,20 @@ the  project  report  and  the  main  findings  and  conclusions  presented  in 
 
 \section*{Acknowledgements}
 Delete if you don't have any acknowledgements to make.
+
+\section*{MSc Final Project Declaration}
+This report is submitted in partial fulfilment of the requirement for the degree of Master of 
+Science in \text{ \moduletitle } at the University of Hertfordshire (UH). \par
+
+It is my own work except where indicated in the report.  \par
+
+(Choose    ONE    of the two statements below for the ethic consideration-please delete this text) \\
+I did not use human participants in my MSc Project. \\
+Or \\
+I used human participants in my MSc Project and my UH Ethical Approval number is  ....\par
+ 
+I hereby give / withhold permission for the report to be made available on the university 
+website provided the source is acknowledged (delete as necessary). \par
 
 \vspace{3em}
 
@@ -214,7 +227,6 @@ referencing that you should work through. It is available at
 
 Use can reference in latex as shown in this dummy text: Proident pariatur sunt ut fugiat exercitation irure velit nostrud dolore adipisicing dolore ipsum fugiat. Elit in proident minim in velit ut nulla Lorem fugiat Lorem incididunt exercitation. Quis veniam irure ea tempor voluptate pariatur excepteur sunt aliqua fugiat veniam ipsum \emph{value function}  \citep{Sutton2018}.
 
-
 \subsection{Appendices}
 
 The appendices to your report provide supporting evidence of the quality and quantity of the 
@@ -240,7 +252,20 @@ in the body of your report to illuminate a point or for discussion purposes.
 
 Any program code written by you must be presented in the appendices, how to do this with this template is included in Appendix \ref{app:sample-source-code}. But do not include code that is machine generated, or that comes from a different author, unless it is necessary for the reader to understand the work you have done. If you do include code that you did not write yourself, it is your responsibility to make clear which parts of the program are your own and which  parts  are  not.  If  you  present  automatically  generated  code,  or  the  code  of  another programmer, as if it were your own, you may be accused of plagiarism. 
 
+\subsection{Linking algorithms and source code}
 
+The following section demonstrates including source code in the main body of your text, see Appendix \ref{app:sample-source-code} for more details of including source code.
+
+Explain the algorithm, citing references, then add the source code for the algorithm and refer to the listing as follows: The source code contained in Listing \ref{lst:algorithm} implements the above algorithm.
+
+
+\begin{lstlisting}[caption={Some algorithm code},label={lst:algorithm},language=Python]
+    import numpy as np
+    
+    def algorithm_function():
+        # more details
+
+\end{lstlisting}  
 
 
 
